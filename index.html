@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Web Alternativo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #075e54;
+        }
+        .qr-code {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .instructions {
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        .chat-container {
+            display: none;
+            height: 500px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>WhatsApp Alternativo</h1>
+        
+        <div id="login-section">
+            <div class="instructions">
+                <p>Para acessar seu WhatsApp:</p>
+                <ol>
+                    <li>Abra o WhatsApp no seu celular</li>
+                    <li>Toque em <strong>Menu</strong> ou <strong>Configurações</strong> e selecione <strong>WhatsApp Web</strong></li>
+                    <li>Aponte a câmera do seu celular para o código QR abaixo</li>
+                </ol>
+            </div>
+            
+            <div class="qr-code">
+                <!-- Substitua por um gerador de QR code real -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://web.whatsapp.com" alt="QR Code">
+                <p>Ou <a href="https://web.whatsapp.com" target="_blank">clique aqui</a> para abrir o WhatsApp Web oficial</p>
+            </div>
+        </div>
+        
+        <div id="chat-section" class="chat-container">
+            <iframe src="https://web.whatsapp.com" allow="camera; microphone"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Simulação de login - na prática, você precisaria de um backend para verificar
+        setTimeout(function() {
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('chat-section').style.display = 'block';
+        }, 5000); // Simula login após 5 segundos
+    </script>
+</body>
+</html>
